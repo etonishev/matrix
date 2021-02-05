@@ -6,12 +6,19 @@
 
 int main() {
 
-    teg::Matrix matrix(3, 3, 1);
-    teg::Matrix other;
+    teg::Matrix<int> matrix(3, 3);
 
-    other = std::move(matrix);
+    matrix[1][1] = 7;
 
-    std::cout << matrix[0][0] << '\n';
+    for (std::size_t i = 0; i < matrix.rows(); ++i) {
+
+        for (std::size_t j = 0; j < matrix.cols(); ++j)
+            std::cout << matrix[i][j] << ' ';
+
+        std::cout << '\n';
+
+    }
+
 
     return 0;
 
